@@ -477,14 +477,14 @@ client2.on('message', async msg =>{
 /////////////////////////
 ////////////////////////
 //////////////////////
-client.on('message', async msg =>{
+client2.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
-    if (!msg.content.startsWith(prefix)) return undefined;
+    if (!msg.content.startsWith(prefix2)) return undefined;
     
     let args = msg.content.split(' ');
 
 	let command = msg.content.toLowerCase().split(" ")[0];
-	command = command.slice(prefix.length)
+	command = command.slice(prefix2.length)
 
     if(command === `avatar`){
 	if(msg.channel.type === 'dm') return msg.channel.send("Nope Nope!! u can't use avatar command in DMs (:")
@@ -517,9 +517,9 @@ client.on('message', async msg =>{
 /////////////////////////
 ////////////////////////
 //////////////////////
-client.on('message', async msg => { 
+client2.on('message', async msg => { 
 	if (msg.author.bot) return undefined;
-    if (!msg.content.startsWith(prefix)) return undefined;
+    if (!msg.content.startsWith(prefix2)) return undefined;
     
     const args = msg.content.split(' ');
 	const searchString = args.slice(1).join(' ');
@@ -528,7 +528,7 @@ client.on('message', async msg => {
 	const serverQueue = queue.get(msg.guild.id);
 
 	let command = msg.content.toLowerCase().split(" ")[0];
-	command = command.slice(prefix.length)
+	command = command.slice(prefix2.length)
 
 	if (command === `play`) {
 		const voiceChannel = msg.member.voiceChannel;
